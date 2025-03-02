@@ -93,11 +93,14 @@ struct ImageDupes: ParsableCommand {
     private func handleDuplicateDeletion(_ duplicates: [String]) {
         print("\nWhich files would you like to delete? (Enter numbers separated by spaces, 's' to skip this set, or 'q' to quit)")
         
-        guard let input = readLine()?.lowercased() else { return }
+        guard let input = readLine()?.lowercased() else { 
+            print("Failed to read input, skipping this set...")
+            return 
+        }
         
         if input == "q" {
-            fatalError("Quitting...")
-//            exit(0)
+            print("Quitting...")
+            exit(0) // Using exit instead of fatalError for a cleaner exit
         }
         
         if input == "s" {
