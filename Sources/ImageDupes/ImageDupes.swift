@@ -280,11 +280,6 @@ class ImageDuplicateFinder {
         }
         
         // Calculate average pixel value
-        guard let pixelData = CFDataCreateMutable(nil, 0) else {
-            print("Failed to create pixel data: \(imagePath)")
-            return nil
-        }
-        
         guard let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2) else {
             print("Failed to create color space: \(imagePath)")
             return nil
