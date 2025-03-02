@@ -30,6 +30,18 @@ To use the Duplicate Image Finder, run the following command:
 ```bash
 ImageDupes <directory> [options]
 ```
+### Options
+```bash
+  -t, --threshold <threshold>
+                          Similarity threshold (0-100, where 100 means identical). Default: 95 (default: 95)
+  -h, --hash-size <hash-size>
+                          Image hash size (higher values provide more accurate comparison but slower performance). Default: 8 (default: 8)
+  -q, --quiet             When set, only shows file paths without interactive prompts
+  -r, --recursive         Recursively scan directories
+  -d, --delete            Enable interactive deletion mode
+  -n, --dry               Dry run - only show duplicates without deleting anything
+  -h, --help              Show help information.
+```
 
 ## Contributing
 
