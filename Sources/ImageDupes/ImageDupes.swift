@@ -100,7 +100,7 @@ struct ImageDupes: ParsableCommand {
         
         if input == "q" {
             print("Quitting...")
-            exit(0) // Using exit instead of fatalError for a cleaner exit
+            ImageDupes.exit(withError: ExitError.userRequestedExit)
         }
         
         if input == "s" {
@@ -345,4 +345,7 @@ class ImageDuplicateFinder {
         
         return distance
     }
+}
+enum ExitError: Error {
+    case userRequestedExit
 }
